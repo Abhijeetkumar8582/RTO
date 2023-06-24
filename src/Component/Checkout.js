@@ -9,10 +9,10 @@ import OTP from "./OTP";
 
 
 export default function KeepMountedModal() {
-  
-    
 
-    
+
+
+
     return (
         <div>
             <div
@@ -24,14 +24,14 @@ export default function KeepMountedModal() {
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
-                        <EnterPhone/>
+                        <EnterPhone />
                     </div>
                 </div>
             </div>
             <div className="modal fade modal-xl" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabIndex="-1">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
-                       <OTP/>
+                        <OTP />
                     </div>
 
                 </div>
@@ -47,13 +47,13 @@ export default function KeepMountedModal() {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <div className="conatiner_address">
-                            <div>
-                            <SelectAddress/>
-                            </div>
-                            <div>
-                               <Cart/>
-                            </div>
+                            <div className="container_address">
+                                <div className='container-address-select-address'>
+                                    <SelectAddress />
+                                </div>
+                                <div className='container-address-cart'>
+                                    <Cart />
+                                </div>
                             </div>
                         </div>
                         <div className="modal-footer">

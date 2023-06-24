@@ -104,7 +104,7 @@ export default function AlignItemsList() {
   return (
     <>
       <h1>Please select your Address</h1>
-      <List sx={{ width: '100%', maxWidth: 560, bgcolor: 'background.paper' }}>
+      <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
         {fakeAddresses.map((element, i) => (
           <div key={i}>
             <ListItem alignItems="flex-start" >
@@ -140,52 +140,53 @@ export default function AlignItemsList() {
 
 
       </List>
-      <div>
+      <div className='address-container'>
         <button onClick={addUserAddress}>Add Address</button>
-        {addAddress === true ? (<div className="container">
-          <h1>Shipping</h1>
-          <p>Please enter your shipping details.</p>
-          <hr />
-          <div className="form" ref={addressRef} id='add-address-form'>
+        {addAddress === true ? (
+          <div className="container_add_address">
+            <h1>Shipping</h1>
+            <p>Please enter your shipping details.</p>
+            <hr />
+            <div className="form" ref={addressRef} id='add-address-form'>
 
-            <div className="fields fields--2">
+              <div className="fields fields--2">
+                <label className="field">
+                  <span className="field__label" htmlFor="firstname">First name</span>
+                  <input className="field__input" type="text" onChange={(e) => fieldFirstName(e)} id="firstname" />
+                </label>
+                <label className="field">
+                  <span className="field__label" htmlFor="lastname">Last name</span>
+                  <input className="field__input" type="text" onChange={(e) => fieldLastName(e)} id="lastname" />
+                </label>
+              </div>
               <label className="field">
-                <span className="field__label" htmlFor="firstname">First name</span>
-                <input className="field__input" type="text" onChange={(e) => fieldFirstName(e)} id="firstname" />
+                <span className="field__label" htmlFor="address">Address</span>
+                <input className="field__input" type="text" onChange={(e) => fieldAddress(e)} id="address" />
               </label>
               <label className="field">
-                <span className="field__label" htmlFor="lastname">Last name</span>
-                <input className="field__input" type="text" onChange={(e) => fieldLastName(e)} id="lastname" />
+                <span className="field__label" htmlFor="country" >Pincode</span>
+                <input className="field__input" type="text" onChange={(e) => fieldPincode(e)} id="address" />
               </label>
-            </div>
-            <label className="field">
-              <span className="field__label" htmlFor="address">Address</span>
-              <input className="field__input" type="text" onChange={(e) => fieldAddress(e)} id="address" />
-            </label>
-            <label className="field">
-              <span className="field__label" htmlFor="country" >Pincode</span>
-              <input className="field__input" type="text" onChange={(e) => fieldPincode(e)} id="address" />
-            </label>
-            <div className="fields fields--3">
-              <label className="field">
-                <span className="field__label" htmlFor="zipcode">Address Name</span>
-                <input className="field__input" type="text" onChange={(e) => fieldAddressName(e)} id="zipcode" />
-              </label>
-              <label className="field">
-                <span className="field__label" htmlFor="city">City</span>
-                <input className="field__input" type="text" id="city" />
-              </label>
-              {/* <label className="field">
+              <div className="fields fields--3">
+                <label className="field">
+                  <span className="field__label" htmlFor="zipcode">Address Name</span>
+                  <input className="field__input" type="text" onChange={(e) => fieldAddressName(e)} id="zipcode" />
+                </label>
+                <label className="field">
+                  <span className="field__label" htmlFor="city">City</span>
+                  <input className="field__input" type="text" id="city" />
+                </label>
+                {/* <label className="field">
                 <span className="field__label" htmlFor="state">State</span>
                 <select className="field__input" id="state">
                   <option value=""></option>
                 </select>
               </label> */}
+              </div>
             </div>
+            <hr />
+            <button className="button" onClick={addressDetailsEntered}>Continue</button>
           </div>
-          <hr />
-          <button className="button" onClick={addressDetailsEntered}>Continue</button>
-        </div>
         ) : null}
       </div>
     </>

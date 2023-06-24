@@ -66,26 +66,24 @@ function EnterPhone() {
 
     const coupons = [
         {
-          title: 'Coupon 1',
-          code: 'ABC123',
-          discount: 10,
-          expirationDate: '2023-07-31',
+            title: 'Coupon 1',
+            code: 'ABC123',
+            discount: 10,
+            expirationDate: '2023-07-31',
         },
         {
-          title: 'Coupon 2',
-          code: 'DEF456',
-          discount: 20,
-          expirationDate: '2023-08-15',
+            title: 'Coupon 2',
+            code: 'DEF456',
+            discount: 20,
+            expirationDate: '2023-08-15',
         },
         {
-          title: 'Coupon 3',
-          code: 'GHI789',
-          discount: 15,
-          expirationDate: '2023-09-30',
-        },
-        // Add more coupon objects as needed
-      ];
-      
+            title: 'Coupon 3',
+            code: 'GHI789',
+            discount: 15,
+            expirationDate: '2023-09-30',
+        }];
+
     return (
         <>
             <div className="modal-header">
@@ -100,18 +98,23 @@ function EnterPhone() {
                 ></button>
             </div>
             <div className='phone-coupon-div'>
-                <div className="modal-body">
+                <div className="modal-body-phone">
                     <div className="mobile_header_bar">
                         <div className="moblie_bar_2nd_section">
-                            <h5 className="enter_phone_text">Enter Mobile Number</h5>
-                            <TextField
-                                error={isInputError ? "Invalid input" : null}
-                                className="enter_phone_number"
-                                onChange={(e) => numberEnter(e)}
-                                fullWidth
-                                label="Phone Number"
-                                id="fullWidth"
-                            />
+                            <div className="enter_phone_text text-center">
+                                <h5 >Enter Mobile Number</h5>
+                            </div>
+                            <div className='enter_phone_number_div'>
+                                <TextField
+                                    error={isInputError ? "Invalid input" : null}
+                                    className="enter_phone_number"
+                                    onChange={(e) => numberEnter(e)}
+                                    fullWidth
+                                    label="Phone Number"
+                                    id="fullWidth"
+                                />
+                            </div>
+
                             <div className="form-check">
                                 <input
                                     type="checkbox"
@@ -124,28 +127,38 @@ function EnterPhone() {
                                     I have read and accept the terms of contract
                                 </label>
                             </div>
-
-                            <button className="custom-btn btn-2" onClick={Handle_btn_click} data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Continue </button>
+                            <div className='phone_submit_btn'>
+                                <button className="custom-btn btn-2" onClick={Handle_btn_click} data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Continue </button>
+                            </div>
                         </div>
                         <div className="footer_mobile_div">
-                            <span>Terms and condition || 2124313</span>
-                            <span className="precify_commerce_text">
+                            <div>Terms and condition || 2124313</div>
+                            <div className="precify_commerce_text">
                                 Powered by <strong>Precify Commerce</strong>
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div >
-                    <h4 className='apply-coupon-text'>Apply Coupon</h4>
-                    <div class="wrap text-center">
-                        <div class="coupon">
-                            <div class="coupon-left">dvs</div>
-                            <div class="coupon-con"></div>
-                        </div>
-                        <div class="coupon">
-                            <div class="coupon-left">dvs</div>
-                            <div class="coupon-con"></div>
-                        </div>
+                <div className='apply_coupon_div'>
+                    <div className='apply-coupon-text'>
+                        <h4 >Apply Coupon</h4>
+                    </div>
+                    <div className="wrap text-center">
+                        {coupons.map((element, i) => (
+                            <div className='render_coupoun'>
+                                <div className="coupon" key={i}>
+                                    <div className="coupon-left">{element.title}</div>
+                                    <div className="coupon-con">
+                                        <div className='coupon-con-child'>
+                                            {element.code}
+                                            {element.discount}
+                                            {element.expirationDate}
+                                        </div>
+                                    </div>
+                                </div>
+                                <button className='apply_coupon_btn'>Apply</button>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
