@@ -1,0 +1,335 @@
+.mobile_header_bar{
+  display: grid;
+  grid-template-rows: 350px 20px;
+}
+
+.enter_phone_text{
+  left: 50%;
+  color: blue;
+  position: absolute;
+  transform: translate(-50%);
+  padding: 10px;
+  top:10%;
+}
+.enter_phone_number{
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  top:25%;
+  max-width: 350px;
+  width: 100%;
+  border-color: aquamarine;  
+}
+.custom-btn {
+  width: 230px;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-2 {
+  background: rgb(96,9,240);
+  background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+  border: none;
+  position: absolute;
+  top:60%;
+
+}
+.btn-2:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-2:hover {
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+.phone-coupon-div{
+display: grid;
+grid-template-columns: 700px auto;
+}
+
+/* ApplyCoupon  */
+.apply-coupon-text{
+ justify-content: center;
+  color: blue;
+  
+}
+.wrap{
+  margin-bottom: 10px;
+}
+.coupon{
+  /* border: 2px solid; */
+  border-radius: 10px;
+  height: 50px;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 130px auto;
+  margin-bottom: 30px;
+}
+.coupon-left{
+  border-radius: 2px 10px 2px 2px;
+  padding: 20px;
+  background:#fadaa7;
+}
+.coupon-con{
+  border-radius: 10px 2px 2px 2px;
+  background:#16120d;
+}
+.form-check{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.footer_mobile_div{
+  display: flex;
+  justify-content: space-between;
+  bottom: 10%;
+  position: relative;
+}
+.precify_commerce_text{
+  color:blue;
+  
+}
+.form-check-label{
+  font-size: small;
+}
+span{
+  font-size: small;
+}
+
+
+.conatiner_address{
+  display: grid;
+  grid-template-columns: 700px auto;
+}
+.cart-item-conatiner{
+  max-height: 400px;
+  overflow: scroll;
+}
+/* @import url(https://fonts.googleapis.com/css?family=Merriweather:700,400,400italic|Playfair+Display:900italic); */
+
+@media only screen and (max-width: 1100px) {
+  .conatiner_address{
+    grid-template-columns: 1fr ;
+  }
+  
+}
+.item-cart-images{
+  max-width: 50px;
+}
+.checkout-modal{
+	background: #fff;
+	margin: auto;
+	max-width: 768px;
+	width: 100%;
+}
+.checkout-modal>.fluid-container>.row>[class*='col']{
+	padding: 1em 2em
+}
+
+.css-table{display: table;}
+.css-table-row{display: table-row;}
+.css-table-cell{
+	display: table-cell;
+	padding: 0.5em;
+}
+.css-table-cell:first-child{padding-left: 0;}
+.css-table-cell:last-child{padding-right: 0;}
+
+h1, h2, h3{
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+	font-size: 2.25em;
+	font-weight: 900;
+}
+
+.payment{
+	background: #2c3e50;
+	color: #fff;
+}
+
+.shopping-cart .cart-summary{
+	background: #ecf0f1;
+	margin: 0 -15px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+.shopping-cart .cart-summary .css-table{
+	text-align: right;
+	width: 100%;
+}
+.shopping-cart .cart-summary .css-table .css-table-cell{
+	padding-top: 0.125em;
+	padding-bottom: 0.125em;
+}
+.shopping-cart .cart-summary .css-table .css-table-cell:last-of-type{width: 1px;}
+.shopping-cart .cart-summary strong{
+	font-size: 1.5em;
+	line-height: 2em;
+}
+.shopping-cart ul.cart-items{
+	margin: 0;
+	padding: 0;
+}
+.shopping-cart ul.cart-items li{
+	list-style: none;
+	width: 100%;
+}
+.shopping-cart ul.cart-items li .item-name{
+	vertical-align: middle;
+	width: 100%
+}
+.shopping-cart ul.cart-items li .item-price,
+.shopping-cart ul.cart-items li .item-quantity{
+	text-align: right;
+	vertical-align: middle;
+	width: 0;
+}
+.shopping-cart ul.cart-items li .item-thumb{width: 80px;}
+.shopping-cart ul.cart-items li .item-thumb img{
+	border-radius: 50%;
+	height: 60px;
+	vertical-align: middle;
+	width: 60px;
+}
+
+
+
+/* Add Address Css? */
+@import url("https://rsms.me/inter/inter.css");
+
+:root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 40rem;
+  padding: 10vw 2rem 0;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+.button:focus-visible {
+  background-color: #333;
+}
