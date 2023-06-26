@@ -20,7 +20,7 @@ export default function AlignItemsList() {
   }, [addAddress]);
 
   const [selectedOption, setSelectedOption] = useState('');
-  const [insertAddress, setInsertAddress] = useState({})
+  // const [insertAddress, setInsertAddress] = useState({})
   const [firstName, setfirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [adress, setaddress] = useState('')
@@ -91,8 +91,8 @@ export default function AlignItemsList() {
     const newAddress = {
       address: addressName,
       street: adress,
-      city: "Ruraltown",
-      state: "State",
+      city: firstName,
+      state: lastName,
       postalCode: getpincode,
       country: "Country",
     }
@@ -103,7 +103,7 @@ export default function AlignItemsList() {
   }
   return (
     <>
-      <h1>Please select your Address</h1>
+      <h1 className='shipping_address_text text-center'>Shipping Address</h1>
       <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
         {fakeAddresses.map((element, i) => (
           <div key={i}>
@@ -141,7 +141,7 @@ export default function AlignItemsList() {
 
       </List>
       <div className='address-container'>
-        <button onClick={addUserAddress}>Add Address</button>
+        <button onClick={addUserAddress} className='add-btn add_address_btn'>Add Address</button>
         {addAddress === true ? (
           <div className="container_add_address">
             <h1>Shipping</h1>
@@ -176,12 +176,6 @@ export default function AlignItemsList() {
                   <span className="field__label" htmlFor="city">City</span>
                   <input className="field__input" type="text" id="city" />
                 </label>
-                {/* <label className="field">
-                <span className="field__label" htmlFor="state">State</span>
-                <select className="field__input" id="state">
-                  <option value=""></option>
-                </select>
-              </label> */}
               </div>
             </div>
             <hr />

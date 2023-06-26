@@ -13,9 +13,7 @@ function Cart() {
         <div className="checkout-modal">
 	<div className="container-fluid">
 		<div className="row">
-			{/* <div className="col-md-6 shopping-cart"> */}
-            {/* <div> */}
-				<h1 className="text-center">Order Summary 🛒</h1>
+				<h1 className="order_summary_text text-center">Order Summary 🛒</h1>
                 <div className='cart-item-conatiner'>
 				<ul className="cart-items css-table">
                     {getCartDetails.map((element,i)=>(
@@ -54,8 +52,6 @@ function Cart() {
                         </div>
 					</div>
 				</div>
-			{/* </div> */}
-			
 		</div>
 	</div>
 </div>
