@@ -1,5 +1,5 @@
 body{
-  font-family: monospace;
+  font-family: Josefin sans regular;
 }
 /* EnterPhone_Css_File */
 .modal-title{
@@ -100,7 +100,26 @@ body{
   }
 
   .apply_coupon_div {
+    width: 100%;
+  }
 
+  .mobile_header_bar {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .phone-coupon-div {
+    flex-direction: column;
+  }
+
+  .modal-body-phone {
+    width: 100%;
+    order: 2;
+  }
+
+  .apply_coupon_div {
+    order: 1;
     width: 100%;
   }
 
@@ -244,7 +263,7 @@ body{
 
 .form-check-label {
   font-size: 10px;
-  font-family: monospace;
+  font-family: Josefin sans regular;
 }
 
 span {
@@ -260,11 +279,11 @@ span {
 
 /* @import url(https://fonts.googleapis.com/css?family=Merriweather:700,400,400italic|Playfair+Display:900italic); */
 .shipping_address_text{
-  font-family: monospace;
+  font-family: Josefin sans regular;
   font-size: 25px;
 }
 .order_summary_text{
-  font-family: monospace;
+  font-family: Josefin sans regular;
   font-size: 25px;
 }
 .container_address {

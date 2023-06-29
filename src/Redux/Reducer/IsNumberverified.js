@@ -1,4 +1,4 @@
-const inital_Value = 'notVerified'
+const inital_Value = false
 
 const is_Number_verified = (state=inital_Value,action)=>{
     if(action.type==='isNumberVerified'){

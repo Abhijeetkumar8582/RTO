@@ -5,11 +5,11 @@ import { User_Phone_Nmber, isNumberVerified, couponSelected, Modal_Progress } fr
 import InputAdornment from "@mui/material/InputAdornment";
 import ModalHeader from "./ModalHeader";
 
-function EnterPhone({ handleOTPModalToggle }) {
+function EnterPhone() {
     const [isInputError, setInputError] = useState(false);
     const [userNumber, setUserNumber] = useState("");
     const [isTermsAccepted, setIsTermsAccepted] = useState(false);
-    const [numberApiResult, setNumberApiResult] = useState(false);
+    const [isNumberCorrect, setIsNumberCorrect] = useState(false);
     const dispatch = useDispatch();
     const coupon_selected = useSelector(state => state.CouponSelectedID)
 
@@ -24,51 +24,21 @@ function EnterPhone({ handleOTPModalToggle }) {
     };
 
 
-    useEffect(() => {
-        function handleKeyDown(event, inputs, index) {
-            if (event.key === "Backspace") {
-                inputs[index].value = "";
-                if (index !== 0) inputs[index - 1].focus();
-            } else {
-                if (index === inputs.length - 1 && inputs[index].value !== "") {
-                    return true;
-                } else if (event.keyCode > 47 && event.keyCode < 58) {
-                    inputs[index].value = event.key;
-                    if (index !== inputs.length - 1) inputs[index + 1].focus();
-                    event.preventDefault();
-                } else if (event.keyCode > 64 && event.keyCode < 91) {
-                    inputs[index].value = String.fromCharCode(event.keyCode);
-                    if (index !== inputs.length - 1) inputs[index + 1].focus();
-                    event.preventDefault();
-                }
-            }
-        }
+    
 
-        function OTPInput() {
-            const inputs = document.querySelectorAll("#otp > *[id]");
-            for (let i = 0; i < inputs.length; i++) {
-                inputs[i].addEventListener("keydown", (event) => {
-                    handleKeyDown(event, inputs, i);
-                });
-            }
-        }
-
-        OTPInput();
-    }, []);
 
     const Handle_btn_click = () => {
-        if (isTermsAccepted) {
+        // if (isTermsAccepted) {
+
+        // }
+        var regex = /^[6-9]\d{9}$/;
+        var phoneNumber = userNumber;
+        var isValidPhoneNumber = regex.test(phoneNumber);
+        if (isValidPhoneNumber) {
+            dispatch(isNumberVerified(true))
             dispatch(User_Phone_Nmber(userNumber));
             dispatch(Modal_Progress(33));
-            if (numberApiResult) {
-                setNumberApiResult(true)
-                dispatch(isNumberVerified("verified"));
-            } else {
-                dispatch(isNumberVerified("notVerified"));
-            }
-        } else {
-            dispatch(Modal_Progress(33));
-            dispatch(User_Phone_Nmber(userNumber));
+
         }
     };
 
@@ -151,11 +121,12 @@ function EnterPhone({ handleOTPModalToggle }) {
                                 <button
                                     className="custom-btn btn-2"
                                     onClick={Handle_btn_click}
-                                    data-bs-target="#exampleModalToggle2"
+                                    data-bs-target={/^[6-9]\d{9}$/.test(userNumber) ? "#exampleModalToggle2" : "#exampleModal4"}
                                     data-bs-toggle="modal"
                                 >
-                                    Continue{" "}
+                                    Continue
                                 </button>
+
                             </div>
                         </div>
                         <div className="footer_mobile_div">

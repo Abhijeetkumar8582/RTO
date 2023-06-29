@@ -4,8 +4,9 @@ import SelectAddress from './SelectAddress'
 import Cart from "./Cart";
 import EnterPhone from "./EnterPhone";
 import OTP from "./OTP";
-// import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ModalHeader from "./ModalHeader";
+import TestModal from "./TestModal";
 
 export default function KeepMountedModal() {
     // const isNumberVerify = useSelector(state => state.is_Number_verified)
@@ -21,17 +22,12 @@ export default function KeepMountedModal() {
                     </div>
                 </div>
             </div>
-
+            <TestModal />
 
             {/* Enter OTP Component */}
-            <div className="modal fade modal-xl" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabIndex="-1">
-                <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content">
-                        <OTP />
-                    </div>
 
-                </div>
-            </div>
+            <OTP />
+
 
 
             <div className="modal fade modal-xl" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabIndex="-1">
